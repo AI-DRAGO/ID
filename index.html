@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="AI DRAGO Gaming Portfolio - Check out my game IDs and stats for Brawl Stars, MLBB, Valorant, and more.">
     <meta name="author" content="">
 
     <title>AI DRAGO</title>
@@ -114,42 +114,42 @@
       <div class="owl-carousel owl-theme text-center">
         <div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w1.png" width="100%" class="img-fluid" alt="#8UCGUJVLV">
+            <img src="images/project/w1.png" width="100%" class="img-fluid" alt="Brawl Stars Profile" data-id="#8UCGUJVLV">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy Brawl Stars ID</button>
           </div>
         </div>
 
         <div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w2.png" class="img-fluid" alt="1068788100(13266)">
+            <img src="images/project/w2.png" class="img-fluid" alt="MLBB Profile" data-id="1068788100(13266)">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy MLBB ID</button>
           </div>
         </div>
 
 	<div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w6.png" class="img-fluid" alt="UQHS9BQV">
+            <img src="images/project/w6.png" class="img-fluid" alt="Indus BR Profile" data-id="UQHS9BQV">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy Indus BR ID</button>
           </div>
 	</div>
 
         <div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w3.png" class="img-fluid" alt="u-hd4045">
+            <img src="images/project/w3.png" class="img-fluid" alt="Asphalt Legends Profile" data-id="u-hd4045">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy Asphalt Legends ID</button>
           </div>
         </div>
 
         <div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w4.png" class="img-fluid" alt="5679205">
+            <img src="images/project/w4.png" class="img-fluid" alt="Shadow Fight 4 Profile" data-id="5679205">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy Shadow Fight 4 ID</button>
           </div>
         </div>
 	      
 	<div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w7.png" class="img-fluid1068788" alt="AI DRAGO#9921">
+            <img src="images/project/w7.png" class="img-fluid" alt="Valorant Profile" data-id="AI DRAGO#9921">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy Valorant ID</button>
           </div>
 	</div>
@@ -158,28 +158,28 @@
 
 	<div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w10.png" class="img-fluid1068788" alt="None">
+            <img src="images/project/w10.png" class="img-fluid" alt="Free Fire Profile" data-id="None">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy Free Fire ID</button>
           </div>
 	</div>
 	      
 	<div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w11.png" class="img-fluid1068788" alt="None">
+            <img src="images/project/w11.png" class="img-fluid" alt="BGMI Profile" data-id="None">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy BGMI ID</button>
           </div>
 	</div>
 	      
 	<div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w12.png" class="img-fluid1068788" alt="None">
+            <img src="images/project/w12.png" class="img-fluid" alt="Roblox Profile" data-id="None">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy Roblox ID</button>
           </div>
 	</div>
 	      
         <div class="item">
           <div class="project-info d-flex flex-column align-items-center justify-content-center">
-            <img src="images/project/w5.png" class="img-fluid" alt="none">
+            <img src="images/project/w5.png" class="img-fluid" alt="Pokemon Unite Profile" data-id="none">
             <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5" onclick="copyAltText(this)">Copy Pokemon Unite ID</button>
           </div>
         </div>
@@ -218,22 +218,22 @@
   function copyAltText(button) {
     // Get the image element from the clicked button's parent
     const image = button.previousElementSibling; // The img element is the previous sibling
-    const altText = image.alt; // Get the alt text of the image
+    const idText = image.getAttribute('data-id'); // Get the data-id of the image
 
-    // Create a temporary input field to copy the alt text to clipboard
-    const tempInput = document.createElement("input");
-    tempInput.value = altText;  // Set the alt text as the input value
-    document.body.appendChild(tempInput);
+    if (!idText || idText.toLowerCase() === "none") {
+         alert('No ID available to copy.');
+         return;
+    }
 
-    // Select the content of the input field and copy it to the clipboard
-    tempInput.select();
-    document.execCommand("copy");
-
-    // Remove the temporary input field
-    document.body.removeChild(tempInput);
-
-    // Optional: Show an alert or message to indicate that the alt text has been copied
-    alert('ID copied: ' + altText);
+    // Use the modern Clipboard API
+    navigator.clipboard.writeText(idText).then(function() {
+      // Show an alert or message to indicate that the ID has been copied
+      alert('ID copied: ' + idText);
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+      // Fallback or error handling
+      alert('Failed to copy ID.');
+    });
   }
 </script>
   </body>
