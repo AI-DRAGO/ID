@@ -1,39 +1,56 @@
-(function ($) {
+"use strict";
 
-  "use strict";
+// COLOR MODE (Vanilla JS)
+document.addEventListener("DOMContentLoaded", function () {
+  const body = document.body;
+  const colorModeBtn = document.querySelector('.color-mode');
+  const colorModeIcon = document.querySelector('.color-mode-icon');
 
-  // COLOR MODE
-  $(document).ready(function () {
-    // Set the dark mode on page load (by default)
-    $('body').addClass('dark-mode');
-    $('.color-mode-icon').addClass('active');
+  // Default dark mode
+  body.classList.add('dark-mode');
+  if (colorModeIcon) colorModeIcon.classList.add('active');
 
-    // Toggle between dark and light mode when the button is clicked
-    $('.color-mode').click(function () {
-      $('.color-mode-icon').toggleClass('active');
-      $('body').toggleClass('dark-mode');
+  if (colorModeBtn) {
+    colorModeBtn.addEventListener('click', function () {
+      if (colorModeIcon) colorModeIcon.classList.toggle('active');
+      body.classList.toggle('dark-mode');
     });
-  });
+  }
 
+  // HEADER (Headroom.js)
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    const headroom = new Headroom(navbar);
+    headroom.init();
+  }
 
-  // HEADER
-  $(".navbar").headroom();
+  // PROJECT SLIDER (Swiper.js)
+  if (document.querySelector('.mySwiper')) {
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 }, // Tablet
+        1024: { slidesPerView: 2 } // Desktop
+      }
+    });
+  }
+});
 
-  // PROJECT CAROUSEL
-  $('.owl-carousel').owlCarousel({
-    items: 1,
-    loop: true,
-    margin: 10,
-    nav: true
-  });
-
-  // SMOOTHSCROLL (Handled by CSS native scroll-behavior)
-  // Legacy support for offset if needed can be added here, but CSS scroll-margin-top is preferred.
-
-  // TOOLTIP
-  $('.social-links a').tooltip();
-
-})(jQuery);
+/* Tooltips are handled by browser title attribute or Bootstrap 5 data-bs-toggle="tooltip" if initialized */
 
 function copyAltText(button) {
   // Get the image element from the clicked button's parent
