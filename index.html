@@ -15,58 +15,39 @@
   <meta property="og:url" content="https://ai-drago.github.io/ID/">
   <meta property="og:title" content="AI DRAGO Gaming Portfolio">
   <meta property="og:description" content="Check out my game IDs and stats for Brawl Stars, MLBB, Valorant, and more.">
-  <meta property="og:image" content="https://ai-drago.github.io/ID/images/undraw/logo.png">
+  <meta property="og:image" content="https://ai-drago.github.io/ID/assets/images/undraw/logo.webp">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <!doctype html>
-  <html lang="en">
+  <meta property="twitter:url" content="https://ai-drago.github.io/ID/">
+  <meta property="twitter:title" content="AI DRAGO Gaming Portfolio">
+  <meta property="twitter:description"
+    content="Check out my game IDs and stats for Brawl Stars, MLBB, Valorant, and more.">
+  <meta property="twitter:image" content="https://ai-drago.github.io/ID/assets/images/undraw/logo.webp">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description"
-      content="AI DRAGO Gaming Portfolio - Check out my game IDs and stats for Brawl Stars, MLBB, Valorant, and more.">
-    <meta name="author" content="">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/unicons.css">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="manifest" href="manifest.json">
 
-    <title>AI DRAGO</title>
+  <!-- MAIN STYLE -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="assets/images/undraw/logo.webp" type="image/x-icon">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ai-drago.github.io/ID/">
-    <meta property="og:title" content="AI DRAGO Gaming Portfolio">
-    <meta property="og:description"
-      content="Check out my game IDs and stats for Brawl Stars, MLBB, Valorant, and more.">
-    <meta property="og:image" content="https://ai-drago.github.io/ID/assets/images/undraw/logo.webp">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ai-drago.github.io/ID/">
-    <meta property="twitter:title" content="AI DRAGO Gaming Portfolio">
-    <meta property="twitter:description"
-      content="Check out my game IDs and stats for Brawl Stars, MLBB, Valorant, and more.">
-    <meta property="twitter:image" content="https://ai-drago.github.io/ID/assets/images/undraw/logo.webp">
-
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/unicons.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="manifest" href="manifest.json">
-
-    <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="icon" href="assets/images/undraw/logo.webp" type="image/x-icon">
-
-  </head>
+</head>
 
 <body>
 
   <!-- MENU -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <!-- <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> AI DRAGO</a> -->
-      <div></div> <!-- Spacer to keep toggler on right if needed, or just let justifying handle it -->
+      <!-- Theme Icon on Left -->
+      <div class="color-mode d-flex justify-content-center align-items-center me-3">
+        <i class="color-mode-icon"></i>
+      </div>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      <!-- Toggler on Right -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         <span class="navbar-toggler-icon"></span>
@@ -81,17 +62,6 @@
           <li class="nav-item">
             <a href="#project" class="nav-link"><span data-hover="Games">Games</span></a>
           </li>
-
-
-        </ul>
-
-        <ul class="navbar-nav ms-auto">
-          <div class="ms-lg-4">
-            <div class="color-mode d-lg-flex justify-content-center align-items-center">
-              <i class="color-mode-icon"></i>
-              <!-- Color mode text removed as requested -->
-            </div>
-          </div>
         </ul>
       </div>
     </div>
@@ -132,7 +102,8 @@
 
         <div class="col-lg-5 col-md-12 col-12">
           <div class="about-image svg">
-            <video class="img-fluid" autoplay loop muted>
+            <video class="img-fluid" autoplay loop muted
+              style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
               <source src="assets/images/undraw/flogo.mp4" type="video/mp4">
             </video>
           </div>
@@ -157,19 +128,25 @@
 
           </div>
 
-          <div class="swiper mySwiper text-center">
-            <div class="swiper-wrapper">
-              <!-- Slides Rendered via assets/js/main.js -->
+          <!-- Swiper Container -->
+          <!-- Swiper Wrapper for External Arrows -->
+          <div class="position-relative px-5">
+            <div class="swiper mySwiper text-center">
+              <div class="swiper-wrapper">
+                <!-- Slides Rendered via assets/js/main.js -->
+              </div>
+
+              <div class="swiper-pagination"></div>
             </div>
+
+            <!-- External Navigation Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+
         </div>
       </div>
     </div>
-    </div>
-
   </section>
 
   <!-- FOOTER -->
@@ -186,14 +163,11 @@
     </div>
   </footer>
 
-  <!-- <script src="js/jquery-3.7.1.min.js"></script> -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/Headroom.js"></script>
   <script src="assets/js/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Add JavaScript -->
-  <!-- Custom Logic Moved to js/custom.js -->
 </body>
 
 </html>
