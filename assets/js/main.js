@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // RENDER SLIDES
   const swiperWrapper = document.querySelector('.swiper-wrapper');
   if (swiperWrapper) {
-    swiperWrapper.innerHTML = games.map(game => `
-      <div class="swiper-slide">
+    swiperWrapper.innerHTML = games.map((game, index) => `
+      <div class="swiper-slide" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="${index * 100}">
         <div class="project-info d-flex flex-column align-items-center justify-content-center">
           <img src="${game.img}" class="img-fluid" alt="${game.name}" data-id="${game.id}">
           <button class="copy-btn btn custom-btn custom-btn-bg custom-btn-link mb-5">${game.btn}</button>
@@ -51,9 +51,22 @@ document.addEventListener("DOMContentLoaded", function () {
     `).join('');
 
     // INITIALIZE SWIPER AFTER CONTENT IS LOADED
+    // 3D Coverflow Effect
     var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
+      effect: "coverflow",
+      grabCursor: true,
       centeredSlides: true,
+      slidesPerView: "auto",
+      speed: 800, // Smoother transition speed
+      observer: true,
+      observeParents: true,
+      coverflowEffect: {
+        rotate: 30, // Reduced rotation for smoother feel
+        stretch: 0,
+        depth: 50,  // Reduced depth to prevent extreme scaling
+        modifier: 1,
+        slideShadows: true,
+      },
       autoplay: {
         delay: 2500,
         disableOnInteraction: false,
@@ -66,12 +79,11 @@ document.addEventListener("DOMContentLoaded", function () {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      breakpoints: {
-        0: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 2 }
-      }
+      // Note: Breakpoints are less strict in coverflow mode, slidesPerView: 'auto' handles responsiveness naturally
     });
+
+    // INITIALIZE AOS (Animate On Scroll)
+    AOS.init();
 
     // EVENT DELEGATION FOR COPY BUTTONS
     swiperWrapper.addEventListener('click', function (e) {
