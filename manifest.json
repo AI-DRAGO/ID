@@ -7,7 +7,7 @@
     "theme_color": "#00bfff",
     "icons": [
         {
-            "src": "images/undraw/logo.webp",
+            "src": "assets/images/undraw/logo.webp",
             "sizes": "500x500",
             "type": "image/webp"
         }
